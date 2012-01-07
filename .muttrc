@@ -1,0 +1,56 @@
+set from = "user@example.com"
+set realname = "Real Name"
+set use_from = yes
+set envelope_from = yes
+
+set signature = "~/.signature"
+
+# SMTP
+set smtp_url = "smtp://gmail.user@smtp.gmail.com:587/"
+set smtp_pass = "password"
+
+# IMAP
+set imap_user = "gmail.user@gmail.com"
+set imap_pass = "password"
+set imap_keepalive = 900
+set imap_check_subscribed
+
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set record = "+[Gmail]/Sent Mail"
+set trash = "+[Gmail]/Trash"
+
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set move = no                # Stop asking to move read messages to mbox
+
+# Keybindings
+bind editor <space> noop
+macro index gi "<change-folder>=INBOX<enter>" "Go to Inbox"
+macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to All Mail"
+macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent Mail"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to Drafts"
+
+# Header stuff
+# ignore "Authentication-Results:"
+# ignore "DomainKey-Signature:"
+# ignore "DKIM-Signature:"
+hdr_order Date From To Cc
+
+set markers = no
+set sort = threads
+set sort_aux = last-date-received
+
+# Editor
+set editor='vim + -c "set textwidth=72" -c "set wrap" -c "?^$"'
+
+# Aliases
+set alias_file = ~/.mutt/aliases
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
+
+# Cryptography
+source ~/.mutt/crypto
