@@ -43,6 +43,21 @@ set markers = no
 set sort = threads
 set sort_aux = last-date-received
 
+# Colour
+color attachment    brightmagenta   default
+color error         brightred       default
+color hdrdefault    red             default
+color indicator     brightyellow    red
+color markers       brightcyan      default
+color message       brightcyan      default
+color normal        default         default
+color quoted        brightblue      default
+color search        default         green
+color signature     red             default
+color status        yellow          blue
+color tilde         magenta         default
+color tree          magenta         default
+
 # Editor
 set editor='vim + -c "set textwidth=72" -c "set wrap" -c "?^$"'
 
