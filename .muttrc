@@ -18,7 +18,6 @@ set imap_check_subscribed
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set postponed = "+[Gmail]/Drafts"
-set record = "+[Gmail]/Sent Mail"
 set trash = "+[Gmail]/Trash"
 
 set header_cache = ~/.mutt/cache/headers
