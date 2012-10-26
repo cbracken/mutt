@@ -1,48 +1,74 @@
-set from = "user@example.com"
-set realname = "Real Name"
-set use_from = yes
-set envelope_from = yes
+# Identity -------------------------------------------
+set from             = "user@domain.com"
+set realname         = "Real Name"
+set use_from         = yes
+set envelope_from    = yes
+set signature        = ~/.mutt/sig             # my signature file
 
-set signature = "~/.signature"
+# Paths ----------------------------------------------
+set folder           = /Volumes/Personal/.mail # mailbox location
+set alias_file       = ~/.mutt/aliases         # where to store aliases
+set header_cache     = ~/.mutt/cache/headers   # where to store headers
+set message_cachedir = ~/.mutt/cache/bodies    # where to store bodies
+set certificate_file = ~/.mutt/certificates    # where to store certs
+set mailcap_path     = ~/.mutt/mailcap         # entries for filetypes
+set tmpdir           = ~/.mutt/temp            # where to keep temp files
 
-# SMTP
-set smtp_url = "smtp://gmail.user@smtp.gmail.com:587/"
-set smtp_pass = "password"
+# Aliases --------------------------------------------
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
 
-# IMAP
-set imap_user = "gmail.user@gmail.com"
-set imap_pass = "password"
-set imap_keepalive = 900
-set imap_check_subscribed
+# Account Settings -----------------------------------
+# Default inbox.
+set spoolfile = "+first.last-gmail.com/INBOX"
 
-set folder = "imaps://imap.gmail.com:993"
-set spoolfile = "+INBOX"
-set postponed = "+[Gmail]/Drafts"
-set trash = "+[Gmail]/Trash"
+# Alternate email addresses.
+alternates first@last.com
 
-set header_cache = ~/.mutt/cache/headers
-set message_cachedir = ~/.mutt/cache/bodies
-set certificate_file = ~/.mutt/certificates
-set move = no                # Stop asking to move read messages to mbox
+# Mailboxes to show in the sidebar.
+mailboxes +first.last-gmail.com/INBOX \
+          +first.last-gmail.com/archive \
+          +first.last-gmail.com/sent \
+          +first.last-gmail.com/drafts \
 
-# Keybindings
-bind editor <space> noop
-macro index gi "<change-folder>=INBOX<enter>" "Go to Inbox"
-macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to All Mail"
-macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent Mail"
-macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to Drafts"
+# Other special folders.
+set mbox      = "+first.last-gmail.com/archive"
+set postponed = "+first.last-gmail.com/drafts"
 
-# Header stuff
-# ignore "Authentication-Results:"
-# ignore "DomainKey-Signature:"
-# ignore "DKIM-Signature:"
-hdr_order Date From To Cc
-
+# Basic Options --------------------------------------
+set wait_key = no        # shut up, mutt
+set mbox_type = Maildir  # mailbox type
+set timeout = 3          # idle time before scanning
+set mail_check = 0       # minimum time between scans
+unset move               # gmail does that
+unset confirmappend      # don't prompt every time we append to mailbox
+unset mark_old           # read/new is good enough for me
+set beep_new             # bell on new mails
+set pipe_decode          # strip headers and eval mimes when piping
+set thorough_search      # strip headers and eval mimes before searching
 set markers = no
 set sort = threads
 set sort_aux = last-date-received
 
-# Colour
+# Header Options -------------------------------------
+ignore *                                # ignore all headers
+unignore date: from: to: cc: subject:   # show only these
+unhdr_order *                           # some distros order things by default
+hdr_order date: from: to: cc: subject:  # and in this order
+
+# Keybindings ----------------------------------------
+bind editor <space> noop
+macro index gi "<change-folder>=first.last-gmail.com/INBOX<enter>" "Go to Inbox"
+macro index ga "<change-folder>=first.last-gmail.com/archive<enter>" "Go to All Mail"
+macro index gs "<change-folder>=first.last-gmail.com/sent<enter>" "Go to Sent Mail"
+macro index gd "<change-folder>=first.last-gmail.com/drafts<enter>" "Go to Drafts"
+
+# Status Bar -----------------------------------------
+set status_chars  = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+# Colors ----------------------------------------------
 color attachment    brightmagenta   default
 color error         brightred       default
 color hdrdefault    red             default
@@ -57,14 +83,7 @@ color status        yellow          blue
 color tilde         magenta         default
 color tree          magenta         default
 
-# Editor
+# Editor ----------------------------------------------
 set editor='vim + -c "set textwidth=72" -c "set wrap" -c "?^$"'
 
-# Aliases
-set alias_file = ~/.mutt/aliases
-set sort_alias = alias
-set reverse_alias = yes
-source $alias_file
-
-# Cryptography
 source ~/.mutt/crypto
