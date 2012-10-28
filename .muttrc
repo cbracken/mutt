@@ -45,7 +45,7 @@ set markers = no
 
 # Index View Options ---------------------------------
 set date_format = "%m/%d"
-set index_format = "%Z  %D  %-20.20F  %s"
+set index_format = "%Z  %D  %-20.20F  (%4c)  %s"
 set sort = threads
 set sort_aux = reverse-last-date-received
 set uncollapse_jump
