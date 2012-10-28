@@ -59,6 +59,7 @@ bind index G        last-entry
 bind index R        group-reply
 bind index <tab>    sync-mailbox
 bind index <space>  collapse-thread
+macro index a "<limit>all\n" "show all messages (undo limit)"
 macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
 macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
@@ -67,6 +68,7 @@ macro index gi "<change-folder>=chris.bracken-gmail.com/INBOX<enter>" "Go to Inb
 macro index ga "<change-folder>=chris.bracken-gmail.com/archive<enter>" "Go to All Mail"
 macro index gs "<change-folder>=chris.bracken-gmail.com/sent<enter>" "Go to Sent Mail"
 macro index gd "<change-folder>=chris.bracken-gmail.com/drafts<enter>" "Go to Drafts"
+macro index S "<enter-command>unset wait_key<enter><shell-escape>~/.mutt/mutt-notmuch-py -G /Volumes/Personal/.mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
 
 # Pager View Options ---------------------------------
 set pager_index_lines = 10 # number of index lines to show
