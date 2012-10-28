@@ -3,7 +3,7 @@ import re, subprocess
 
 # GPG encrypted password lookup
 def get_gpg_pass(keyfile):
-  pw = subprocess.check_output(["gpg", "-q", "--use-agent", "--batch", "-d", keyfile])
+  pw = subprocess.check_output(["gpg", "-q", "--batch", "-d", keyfile])
   return str(pw).strip()
 
 # Mac keychain access
