@@ -24,7 +24,7 @@ nametrans = lambda folder: {'drafts':   '[Gmail]/Drafts',
 maxconnections = 1
 type = Gmail
 remoteuser = chris.bracken@gmail.com
-remotepasseval = get_gpg_pass(keyfile="/Users/cbracken/src/keychain/mutt.gmail.gpg")
+remotepasseval = get_gpg_pass(keyfile="/Users/cbracken/src/keyring/mutt.gmail.gpg")
 realdelete = no
 nametrans = lambda folder: {'[Gmail]/Drafts':     'drafts',
                             '[Gmail]/Sent Mail':  'sent',
