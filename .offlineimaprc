@@ -12,7 +12,7 @@ postsynchook = notmuch new
 
 [Repository Chris-Local]
 type = Maildir
-localfolders = /Volumes/Personal/.mail/chris.bracken-gmail.com
+localfolders = ~/mail/chris.bracken-gmail.com
 nametrans = lambda folder: {'drafts':   '[Gmail]/Drafts',
                             'sent':     '[Gmail]/Sent Mail',
                             'flagged':  '[Gmail]/Starred',
@@ -21,10 +21,11 @@ nametrans = lambda folder: {'drafts':   '[Gmail]/Drafts',
                            }.get(folder, folder)
 
 [Repository Chris-Remote]
+cert_fingerprint = 6d1b5b5ee0180ab493b71d3b94534b5ab937d042
 maxconnections = 1
 type = Gmail
 remoteuser = chris.bracken@gmail.com
-remotepasseval = get_gpg_pass(keyfile="/Users/cbracken/src/keyring/mutt.gmail.gpg")
+remotepasseval = get_gpg_pass(keyfile="/home/chris/src/keyring/mutt.gmail.gpg")
 realdelete = no
 nametrans = lambda folder: {'[Gmail]/Drafts':     'drafts',
                             '[Gmail]/Sent Mail':  'sent',
