@@ -21,15 +21,14 @@ Only tested on OSX Lion.
 (c) 2012 - Honza Pokorny
 Licensed under BSD
 """
-import hashlib, sys
-from commands import getoutput
+import hashlib, subprocess, sys
 from mailbox import Maildir
 from optparse import OptionParser
 
 
 def digest(filename):
     with open(filename) as f:
-        return hashlib.sha1(f.read()).hexdigest()
+        return hashlib.sha1(f.read().encode('utf-8')).hexdigest()
 
 
 def pick_all_mail(messages):
@@ -44,11 +43,11 @@ def empty_dir(directory):
 
 
 def command(cmd):
-    return getoutput(cmd)
+    return subprocess.check_output(cmd, shell=True)
 
 
 def main(dest_box):
-    query = raw_input('Query: ')
+    query = input('Query: ')
 
     command('mkdir -p %s' % dest_box)
     command('mkdir -p %s/cur' % dest_box)
@@ -56,7 +55,8 @@ def main(dest_box):
 
     empty_dir(dest_box)
 
-    files = command('notmuch search --output=files %s' % query).split('\n')
+    output = command('notmuch search --output=files %s' % query)
+    files = output.decode('utf-8').split('\n')
     files = filter(None, files)
 
     data = {}
