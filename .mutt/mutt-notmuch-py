@@ -27,8 +27,9 @@ from optparse import OptionParser
 
 
 def digest(filename):
-    with open(filename) as f:
-        return hashlib.sha1(f.read().encode('utf-8')).hexdigest()
+    with open(filename, 'rb') as f:
+        contents = f.read()
+        return hashlib.sha1(contents).hexdigest()
 
 
 def pick_all_mail(messages):
