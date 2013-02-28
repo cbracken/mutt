@@ -70,7 +70,7 @@ macro index gi "<change-folder>=chris.bracken-gmail.com/INBOX<enter>" "Go to Inb
 macro index ga "<change-folder>=chris.bracken-gmail.com/archive<enter>" "Go to All Mail"
 macro index gs "<change-folder>=chris.bracken-gmail.com/sent<enter>" "Go to Sent Mail"
 macro index gd "<change-folder>=chris.bracken-gmail.com/drafts<enter>" "Go to Drafts"
-macro index S "<enter-command>unset wait_key<enter><shell-escape>~/.mutt/mutt-notmuch-py -G ~/mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
+macro index S "<enter-command>unset wait_key<enter><shell-escape>~/.mutt/mutt-notmuch-py -G ~/mail/.tmp/search<enter><change-folder-readonly>+.tmp/search<enter>" "search mail (using notmuch)"
 
 # Pager View Options ---------------------------------
 set pager_index_lines = 10 # number of index lines to show
