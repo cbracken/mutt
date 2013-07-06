@@ -1,6 +1,7 @@
 # Paths ----------------------------------------------
 set folder           = ~/mail                  # mailbox location
 set alias_file       = ~/.mutt/aliases         # where to store aliases
+set query_command    = "abook --mutt-query '%s'" # query abook for aliases
 set header_cache     = ~/.mutt.cache/headers   # where to store headers
 set message_cachedir = ~/.mutt.cache/bodies    # where to store bodies
 set tmpdir           = ~/.mutt.cache/temp      # where to keep temp files
@@ -44,6 +45,10 @@ set beep_new             # bell on new mails
 set pipe_decode          # strip headers and eval mimes when piping
 set thorough_search      # strip headers and eval mimes before searching
 set markers = no
+
+# General macros
+macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
+macro index,pager A "<pipe-message>abook --add-email<return>" "add sender to address book"
 
 # Index View Options ---------------------------------
 set date_format = "%m/%d"
