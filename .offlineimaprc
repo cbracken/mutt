@@ -25,7 +25,7 @@ sslcacertfile=/etc/ssl/certs/ca-certificates.crt
 maxconnections = 1
 type = Gmail
 remoteuser = chris.bracken@gmail.com
-remotepasseval = get_gpg_pass(keyfile="/home/chris/src/keyring/mutt.gmail.gpg")
+remotepasseval = get_gpg_pass(keyfile="/home/chris/src/cfg/keyring/mutt.gmail.gpg")
 realdelete = no
 nametrans = lambda folder: {'[Gmail]/Drafts':     'drafts',
                             '[Gmail]/Sent Mail':  'sent',
