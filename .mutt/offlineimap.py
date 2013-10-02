@@ -1,10 +1,14 @@
-#!/usr/bin/python
-import re, subprocess
+#!/usr/bin/python2
+import re, subprocess, keyring
 
 # GPG encrypted password lookup
 def get_gpg_pass(keyfile):
   pw = subprocess.check_output(["gpg", "-q", "--batch", "-d", keyfile])
   return str(pw).strip()
+
+# GNOME keyring access
+def get_gnome_keyring_pass(service, username):
+  return keyring.get_password(service, username)
 
 # Mac keychain access
 def get_keychain_pass(account=None, server=None):
