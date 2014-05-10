@@ -46,9 +46,11 @@ set pipe_decode          # strip headers and eval mimes when piping
 set thorough_search      # strip headers and eval mimes before searching
 set markers = no
 
-# General macros
+# Use abook instead of aliases
+set query_command = "abook --mutt-query '%s'"
 macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
 macro index,pager A "<pipe-message>abook --add-email<return>" "add sender to address book"
+bind editor <tab> complete-query
 
 # Index View Options ---------------------------------
 set date_format = "%m/%d"
