@@ -52,7 +52,7 @@ macro index,pager A "<pipe-message>abook --add-email<return>" "add sender to add
 bind editor <tab> complete-query
 
 # Index View Options ---------------------------------
-set date_format = "%m/%d"
+set date_format = "!%Y-%m-%d %H:%M %Z"
 set index_format = "%Z  %D  %-20.20F  (%4c)  %s"
 set sort = threads
 set sort_aux = reverse-last-date-received
@@ -124,7 +124,7 @@ set fcc_attach                       # save attachments with the body
 unset mime_forward                   # forward attachments as part of body
 set forward_format = "Fwd: %s"       # format of subject when forwarding
 set forward_decode                   # decode when forwarding
-set attribution = "On %d, %n wrote:" # format of quoting header
+set attribution = "%d %n:"           # reply quote header
 set reply_to                         # reply to Reply to: field
 set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
