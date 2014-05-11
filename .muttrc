@@ -100,6 +100,7 @@ bind pager k   previous-entry
 bind pager \Cj next-line
 bind pager \Ck previous-line
 bind pager u   half-up
+bind pager <space> half-down
 bind pager R   group-reply
 bind pager ?   search-opposite
 bind attach <return> view-mailcap # View attachments properly.
