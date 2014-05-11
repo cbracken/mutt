@@ -32,7 +32,7 @@ set postponed = "+chris.bracken-gmail.com/drafts"
 set record    = "+chris.bracken-gmail.com/sent"
 
 # Basic Options --------------------------------------
-set wait_key = no        # shut up, mutt
+set wait_key = no        # don't prompt for <enter> so much
 set mbox_type = Maildir  # mailbox type
 set timeout = 3          # idle time before scanning
 set mail_check = 0       # minimum time between scans
