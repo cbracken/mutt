@@ -130,7 +130,7 @@ set include                          # include message in replies
 set forward_quote                    # include message in forwards
 
 # Editor ----------------------------------------------
-set editor='vim + -c "set textwidth=72" -c "set wrap" -c "silent /^$" -c "noh"'
+set editor='vim + -c "set nocp" -c "set textwidth=72" -c "set wrap" -c "silent /^$" -c "noh"'
 
 # Send Options ---------------------------------------
 set from          = "chris@bracken.jp"
