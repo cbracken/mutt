@@ -10,3 +10,6 @@ application/pdf; evince %s
 
 # HTML
 text/html; w3m -I %{charset} -dump %s; nametemplate=%s.html; copiousoutput
+
+# GPG
+application/pgp-encrypted; gpg --decrypt; copiousoutput
