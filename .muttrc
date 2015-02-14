@@ -114,8 +114,8 @@ unhdr_order *                           # some distros order things by default
 hdr_order date: from: to: cc: subject:  # and in this order
 
 # Compose View Options -------------------------------
-set realname         = "Chris Bracken"
-set use_from         = yes
+set realname = "Chris Bracken"
+set use_from = yes
 set envelope_from                    # which from?
 set sig_dashes                       # dashes before sig
 set edit_headers                     # show headers when composing
