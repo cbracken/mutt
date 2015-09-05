@@ -1,0 +1,68 @@
+IMAPAccount gmail
+Host imap.gmail.com
+User chris.bracken@gmail.com
+PassCmd "gpg -q --batch -d ~/src/cfg/keyring/mutt.gmail.gpg"
+#SSLType IMAPS
+UseIMAPS yes
+RequireSSL yes
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# 下書き:'[Gmail]/&Tgtm+DBN-'
+# 送信済みメール: '[Gmail]/&kAFP4W4IMH8w4TD8MOs-'
+# スター付き: '[Gmail]/&MLkwvzD8TtgwTQ-'
+# ゴミ箱: '[Gmail]/&MLQw33ux-'
+# すべてのメール: '[Gmail]/&MFkweTBmMG4w4TD8MOs-'
+# 迷惑メール: '[Gmail]/&j,dg0TDhMPww6w-'
+# 重要: '[Gmail]/&kc2JgQ-'
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+Path ~/mail/chris.bracken-gmail.com/
+Inbox ~/mail/chris.bracken-gmail.com/INBOX
+
+Channel gmail-default
+Master :gmail-remote:
+Slave :gmail-local:
+Patterns "INBOX"
+Create Both
+SyncState *
+
+Channel gmail-drafts
+Master :gmail-remote:"[Gmail]/&Tgtm+DBN-"
+Slave :gmail-local:"drafts"
+Create Both
+SyncState *
+
+Channel gmail-sent
+Master :gmail-remote:"[Gmail]/&kAFP4W4IMH8w4TD8MOs-"
+Slave :gmail-local:"sent"
+Create Both
+SyncState *
+
+Channel gmail-starred
+Master :gmail-remote:"[Gmail]/&MLkwvzD8TtgwTQ-"
+Slave :gmail-local:"flagged"
+Create Both
+SyncState *
+
+Channel gmail-trash
+Master :gmail-remote:"[Gmail]/&MLQw33ux-"
+Slave :gmail-local:"trash"
+Create Both
+SyncState *
+
+Channel gmail-archive
+Master :gmail-remote:"[Gmail]/&MFkweTBmMG4w4TD8MOs-"
+Slave :gmail-local:"archive"
+Create Both
+SyncState *
+
+Group gmail
+Channel gmail-default
+Channel gmail-drafts
+Channel gmail-sent
+Channel gmail-starred
+Channel gmail-trash
+Channel gmail-archive
