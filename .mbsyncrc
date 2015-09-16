@@ -7,13 +7,13 @@ UseIMAPS yes
 RequireSSL yes
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-# 下書き:'[Gmail]/&Tgtm+DBN-'
-# 送信済みメール: '[Gmail]/&kAFP4W4IMH8w4TD8MOs-'
-# スター付き: '[Gmail]/&MLkwvzD8TtgwTQ-'
-# ゴミ箱: '[Gmail]/&MLQw33ux-'
-# すべてのメール: '[Gmail]/&MFkweTBmMG4w4TD8MOs-'
-# 迷惑メール: '[Gmail]/&j,dg0TDhMPww6w-'
-# 重要: '[Gmail]/&kc2JgQ-'
+# 下書き         '[Gmail]/&Tgtm+DBN-'            '[Gmail]/Drafts'
+# 送信済みメール '[Gmail]/&kAFP4W4IMH8w4TD8MOs-' '[Gmail]/Sent Mail'
+# スター付き     '[Gmail]/&MLkwvzD8TtgwTQ-'      '[Gmail]/Starred'
+# ゴミ箱         '[Gmail]/&MLQw33ux-'            '[Gmail]/Bin'
+# すべてのメール '[Gmail]/&MFkweTBmMG4w4TD8MOs-' '[Gmail]/All Mail'
+# 迷惑メール     '[Gmail]/&j,dg0TDhMPww6w-'      '[Gmail]/Spam'
+# 重要           '[Gmail]/&kc2JgQ-'              '[Gmail]/Important'
 
 IMAPStore gmail-remote
 Account gmail
@@ -30,31 +30,31 @@ Create Both
 SyncState *
 
 Channel gmail-drafts
-Master :gmail-remote:"[Gmail]/&Tgtm+DBN-"
+Master :gmail-remote:"[Gmail]/Drafts"
 Slave :gmail-local:"drafts"
 Create Both
 SyncState *
 
 Channel gmail-sent
-Master :gmail-remote:"[Gmail]/&kAFP4W4IMH8w4TD8MOs-"
+Master :gmail-remote:"[Gmail]/Sent Mail"
 Slave :gmail-local:"sent"
 Create Both
 SyncState *
 
 Channel gmail-starred
-Master :gmail-remote:"[Gmail]/&MLkwvzD8TtgwTQ-"
+Master :gmail-remote:"[Gmail]/Starred"
 Slave :gmail-local:"flagged"
 Create Both
 SyncState *
 
 Channel gmail-trash
-Master :gmail-remote:"[Gmail]/&MLQw33ux-"
+Master :gmail-remote:"[Gmail]/Bin"
 Slave :gmail-local:"trash"
 Create Both
 SyncState *
 
 Channel gmail-archive
-Master :gmail-remote:"[Gmail]/&MFkweTBmMG4w4TD8MOs-"
+Master :gmail-remote:"[Gmail]/All Mail"
 Slave :gmail-local:"archive"
 Create Both
 SyncState *
