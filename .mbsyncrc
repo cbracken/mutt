@@ -6,6 +6,7 @@ PassCmd "gpg -q --batch -d ~/src/cfg/keyring/mutt.gmail.gpg"
 UseIMAPS yes
 RequireSSL yes
 CertificateFile /etc/ssl/certs/ca-certificates.crt
+#CertificateFile ~/.homebrew/etc/openssl/cert.pem
 
 # Throttle so we don't go over GMail's query quota.
 # See: https://sourceforge.net/p/isync/mailman/message/35458365/
