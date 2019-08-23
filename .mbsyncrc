@@ -7,6 +7,10 @@ UseIMAPS yes
 RequireSSL yes
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
+# Throttle so we don't go over GMail's query quota.
+# See: https://sourceforge.net/p/isync/mailman/message/35458365/
+PipelineDepth 50
+
 # 下書き         '[Gmail]/&Tgtm+DBN-'            '[Gmail]/Drafts'
 # 送信済みメール '[Gmail]/&kAFP4W4IMH8w4TD8MOs-' '[Gmail]/Sent Mail'
 # スター付き     '[Gmail]/&MLkwvzD8TtgwTQ-'      '[Gmail]/Starred'
