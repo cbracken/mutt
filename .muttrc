@@ -124,7 +124,7 @@ set fcc_attach                       # save attachments with the body
 unset mime_forward                   # forward attachments as part of body
 set forward_format = "Fwd: %s"       # format of subject when forwarding
 set forward_decode                   # decode when forwarding
-set attribution = "%d %n:"           # reply quote header
+set attribution = "%d %n <%a>:"      # reply quote header
 set reply_to                         # reply to Reply to: field
 set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
