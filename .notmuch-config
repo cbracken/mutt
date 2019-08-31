@@ -42,6 +42,7 @@ other_email=chris.bracken@gmail.com;
 #
 [new]
 tags=unread;inbox;
+ignore=.tmp
 
 # Maildir compatibility configuration
 #
