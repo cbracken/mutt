@@ -41,8 +41,8 @@ other_email=chris.bracken@gmail.com;
 #		added to all messages incorporated by "notmuch new".
 #
 [new]
-tags=unread;inbox;
-ignore=.tmp
+tags=unread;inbox
+ignore=.tmp;.mbsyncstate;.uidvalidity
 
 # Maildir compatibility configuration
 #
