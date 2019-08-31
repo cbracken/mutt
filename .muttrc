@@ -3,7 +3,7 @@ set folder           = ~/mail                  # mailbox location
 set alias_file       = ~/.mutt/aliases         # where to store aliases
 set header_cache     = ~/.mutt.cache/headers   # where to store headers
 set message_cachedir = ~/.mutt.cache/bodies    # where to store bodies
-set tmpdir           = ~/.mutt.cache/temp      # where to keep temp files
+set tmpdir           = ~/.mutt.cache/tmp       # where to keep temp files
 set certificate_file = ~/.mutt/certificates    # where to store certs
 set mailcap_path     = ~/.mutt/mailcap         # entries for filetypes
 set signature        = ~/.mutt/sig             # my signature file
@@ -15,21 +15,21 @@ source $alias_file
 
 # Account Settings -----------------------------------
 # Default inbox.
-set spoolfile = "+chris.bracken-gmail.com/INBOX"
+set spoolfile = "+chris-bracken.jp/INBOX"
 
 # Alternate email addresses.
 alternates chris@bracken.jp
 
 # Mailboxes to show in the sidebar.
-mailboxes +chris.bracken-gmail.com/INBOX \
-          +chris.bracken-gmail.com/archive \
-          +chris.bracken-gmail.com/sent \
-          +chris.bracken-gmail.com/drafts
+mailboxes +chris-bracken.jp/INBOX \
+          +chris-bracken.jp/archive \
+          +chris-bracken.jp/sent \
+          +chris-bracken.jp/drafts
 
 # Other special folders.
-set mbox      = "+chris.bracken-gmail.com/archive"
-set postponed = "+chris.bracken-gmail.com/drafts"
-set record    = "+chris.bracken-gmail.com/sent"
+set mbox      = "+chris-bracken.jp/archive"
+set postponed = "+chris-bracken.jp/drafts"
+set record    = "+chris-bracken.jp/sent"
 
 # Basic Options --------------------------------------
 set wait_key = no        # don't prompt for <enter> so much
@@ -70,13 +70,13 @@ bind index R       group-reply
 bind index ?       search-opposite
 bind index <space> collapse-thread
 macro index a "<limit>all\n" "show all messages (undo limit)"
-macro index o "<shell-escape>mbsync -q gmail; notmuch new<enter>" "sync core mailboxes"
+macro index o "<shell-escape>mbsync -q bracken_jp; notmuch new<enter>" "sync core mailboxes"
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
-macro index gi "<change-folder>=chris.bracken-gmail.com/INBOX<enter>" "Go to Inbox"
-macro index ga "<change-folder>=chris.bracken-gmail.com/archive<enter>" "Go to All Mail"
-macro index gs "<change-folder>=chris.bracken-gmail.com/sent<enter>" "Go to Sent Mail"
-macro index gd "<change-folder>=chris.bracken-gmail.com/drafts<enter>" "Go to Drafts"
+macro index gi "<change-folder>=chris-bracken.jp/INBOX<enter>" "Go to Inbox"
+macro index ga "<change-folder>=chris-bracken.jp/archive<enter>" "Go to All Mail"
+macro index gs "<change-folder>=chris-bracken.jp/sent<enter>" "Go to Sent Mail"
+macro index gd "<change-folder>=chris-bracken.jp/drafts<enter>" "Go to Drafts"
 macro index S "<enter-command>unset wait_key<enter><shell-escape>~/.mutt/mutt-notmuch-py -G ~/mail/.tmp/search<enter><change-folder-readonly>+.tmp/search<enter>" "search mail (using notmuch)"
 
 # Pager View Options ---------------------------------
