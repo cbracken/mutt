@@ -70,7 +70,7 @@ bind index R       group-reply
 bind index ?       search-opposite
 bind index <space> collapse-thread
 macro index a "<limit>all\n" "show all messages (undo limit)"
-macro index o "<shell-escape>mbsync -q bracken_jp; notmuch new<enter>" "sync core mailboxes"
+macro index o "<shell-escape>mbsync bracken_jp; notmuch new<enter>" "sync core mailboxes"
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 macro index gi "<change-folder>=chris-bracken.jp/INBOX<enter>" "Go to Inbox"
