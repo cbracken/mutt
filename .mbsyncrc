@@ -19,6 +19,7 @@
 
 IMAPAccount bracken_jp
 Host imap.gmail.com
+Port 993
 User chris@bracken.jp
 PassCmd "gpg -q --batch -d ~/src/cfg/keyring/mbsync.bracken_jp.gpg"
 AuthMechs LOGIN
