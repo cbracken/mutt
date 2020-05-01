@@ -1,5 +1,5 @@
 # Paths ----------------------------------------------
-set folder           = ~/mail                  # mailbox location
+set folder           = ~/Mail                  # mailbox location
 set alias_file       = ~/.mutt/aliases         # where to store aliases
 set header_cache     = ~/.cache/mutt/headers   # where to store headers
 set message_cachedir = ~/.cache/mutt/bodies    # where to store bodies
@@ -77,7 +77,7 @@ macro index gi "<change-folder>=chris-bracken.jp/INBOX<enter>" "Go to Inbox"
 macro index ga "<change-folder>=chris-bracken.jp/archive<enter>" "Go to All Mail"
 macro index gs "<change-folder>=chris-bracken.jp/sent<enter>" "Go to Sent Mail"
 macro index gd "<change-folder>=chris-bracken.jp/drafts<enter>" "Go to Drafts"
-macro index S "<enter-command>unset wait_key<enter><shell-escape>~/.mutt/mutt-notmuch-py -G ~/mail/.tmp/search<enter><change-folder-readonly>+.tmp/search<enter>" "search mail (using notmuch)"
+macro index S "<enter-command>unset wait_key<enter><shell-escape>~/.mutt/mutt-notmuch-py -G ~/Mail/.tmp/search<enter><change-folder-readonly>+.tmp/search<enter>" "search mail (using notmuch)"
 
 # Pager View Options ---------------------------------
 set pager_index_lines = 10 # number of index lines to show

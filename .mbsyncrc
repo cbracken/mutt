@@ -35,8 +35,8 @@ Account bracken_jp
 
 # Create bracken.jp local
 MaildirStore bracken_jp-local
-Path ~/mail/chris-bracken.jp/
-Inbox ~/mail/chris-bracken.jp/INBOX
+Path ~/Mail/chris-bracken.jp/
+Inbox ~/Mail/chris-bracken.jp/INBOX
 
 Channel bracken_jp-default
 Master :bracken_jp-remote:
