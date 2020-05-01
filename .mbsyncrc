@@ -42,37 +42,43 @@ Channel bracken_jp-default
 Master :bracken_jp-remote:
 Slave :bracken_jp-local:
 Patterns "INBOX"
-Create Both
+Create Slave
+Expunge Both
 SyncState *
 
 Channel bracken_jp-drafts
 Master :bracken_jp-remote:"[Gmail]/Drafts"
 Slave :bracken_jp-local:"drafts"
-Create Both
+Create Slave
+Expunge Both
 SyncState *
 
 Channel bracken_jp-sent
 Master :bracken_jp-remote:"[Gmail]/Sent Mail"
 Slave :bracken_jp-local:"sent"
-Create Both
+Create Slave
+Expunge Both
 SyncState *
 
 Channel bracken_jp-starred
 Master :bracken_jp-remote:"[Gmail]/Starred"
 Slave :bracken_jp-local:"flagged"
-Create Both
+Create Slave
+Expunge Both
 SyncState *
 
 Channel bracken_jp-trash
 Master :bracken_jp-remote:"[Gmail]/Bin"
 Slave :bracken_jp-local:"trash"
-Create Both
+Create Slave
+Expunge Both
 SyncState *
 
 Channel bracken_jp-archive
 Master :bracken_jp-remote:"[Gmail]/All Mail"
 Slave :bracken_jp-local:"archive"
-Create Both
+Create Slave
+Expunge Both
 SyncState *
 
 Group bracken_jp
