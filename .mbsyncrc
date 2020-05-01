@@ -25,8 +25,9 @@ PassCmd "gpg -q --batch -d ~/src/cfg/keyring/mbsync.bracken_jp.gpg"
 AuthMechs LOGIN
 SSLType IMAPS
 PipelineDepth 50
-CertificateFile ~/.homebrew/etc/openssl/cert.pem
+#CertificateFile ~/.homebrew/etc/openssl/cert.pem
 #CertificateFile /etc/ssl/certs/ca-certificates.crt
+CertificateFile /usr/local/share/certs/ca-root-nss.crt
 
 # Create bracken.jp remote
 IMAPStore bracken_jp-remote
