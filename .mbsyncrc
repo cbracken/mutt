@@ -37,6 +37,7 @@ Account bracken_jp
 MaildirStore bracken_jp-local
 Path ~/Mail/chris-bracken.jp/
 Inbox ~/Mail/chris-bracken.jp/INBOX
+Flatten "."
 
 Channel bracken_jp-default
 Master :bracken_jp-remote:
